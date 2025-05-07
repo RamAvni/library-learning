@@ -1,3 +1,6 @@
 [submodule "mosh-javascript-vitest"]
 	path = mosh-javascript-vitest
 	url = git@github.com:RamAvni/mosh-javascript-vitest.git
+[submodule "coderyan-cypress-course"]
+	path = coderyan-cypress-course
+	url = https://github.com/RamAvni/coderyan-cypress-course
