@@ -1,3 +1,5 @@
+const MAX_WAIT_TIME = 20000;
+
 describe("Various examples", () => {
   beforeEach(() => {
     cy.visit("/examples");
@@ -16,5 +18,14 @@ describe("Various examples", () => {
       cy.getDataTest(navItem.dataTest).click();
       cy.location("pathname").should("equal", navItem.path);
     });
+  });
+
+  it("intercepts", () => {
+    cy.intercept("POST", "http://localhost:3000/examples", {
+      body: {
+        message: "lol got it",
+      },
+    });
+    cy.getDataTest("post-button").click();
   });
 });
